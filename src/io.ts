@@ -86,7 +86,11 @@ async function copyFile(filePath: string, targetFilePath: string, flags: Flags) 
   }
 
   if (flags.replace) {
-    await fs.copyFile(filePath, targetFilePath, fs.constants.COPYFILE_EXCL);
+    // for linux
+    await fs.unlink(targetFilePath).catch(() => {
+      // this is fine
+    });
+    await fs.copyFile(filePath, targetFilePath);
   } else {
     await fs.copyFile(filePath, targetFilePath);
   }
