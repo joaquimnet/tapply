@@ -10,7 +10,8 @@
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "lint:fix": "eslint --fix \"src/**/*.{ts,tsx}\"",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
-    "ci": "npm run lint && tsc --noEmit"
+    "ci": "npm run lint && tsc --noEmit",
+    "prepublishOnly": "npm run ci && npm run build"
   },
   "bin": {
     "tapply": "./dist/index.js"
