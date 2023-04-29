@@ -1,6 +1,6 @@
 {
   "name": "tapply",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "CLI to clone a repository and apply it to a folder, with option to overwrite or not.",
   "main": "index.js",
   "scripts": {
